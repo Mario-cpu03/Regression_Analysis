@@ -14,24 +14,28 @@
 # an output of the "src/correlationAnalysis.R" script, named as it follows:
 # "data/DataSet_gruppo4-PROCESSED.csv".
 
-# Setting the correct working directory 
+
+# Setting the correct working directory:
 # (delete the content and insert a different directory if you cloned the repository from GitHub
 # or delete "#" if the path is the same)
+
 setwd("~/Desktop/Regression_Analysis");
 
-# Import the data set
+# Import the data set:
+
 dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv");
 
-# Explorative Analysis
+# Explorative Analysis:
 
 source("./src/dataPreprocessing.R");
 source("./src/descriptiveAnalysis.R");
 source("./src/correlationAnalysis.R");
 
-# Import the processed data set
+# Import the processed data set:
+
 processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv"); 
 
-# Linear Model Creation
+# Linear Model Creation:
 
 source("./src/regressionModel.R");
 source("./src/decision.R");
