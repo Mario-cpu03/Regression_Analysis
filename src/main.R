@@ -1,4 +1,4 @@
-## Main Script
+### Main Script
 
 # The main script is used to read code from
 # "src/dataPreprocessing.R", "src/descriptiveAnalysis.R" and all the 
@@ -25,7 +25,7 @@ setwd("~/Desktop/Regression_Analysis");
 
 dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv");
 
-# EXPLORATIVE ANALYSIS:
+## EXPLORATIVE ANALYSIS:
 
 source("./src/dataPreprocessing.R");
 source("./src/descriptiveAnalysis.R");
@@ -35,7 +35,7 @@ source("./src/correlationAnalysis.R");
 
 processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv"); 
 
-# LINEAR MODEL CREATION:
+## LINEAR MODEL CREATION:
 
 source("./src/regressionModel.R");
 source("./src/decision.R");

@@ -1,4 +1,4 @@
-## Data Preprocessing Script
+### Data Preprocessing Script
 
 # The data preprocessing script is used as a first step
 # for an explorative data analysis.
@@ -6,7 +6,7 @@
 # Moreover, we will obtain information about the variables domains and modalities,
 # that is, with respect to the values they can assume.
 
-#PRELIMINARY CONTROLS
+## PRELIMINARY CONTROLS
 
 cat("Verifying if the data set is clean...")
 
@@ -21,7 +21,7 @@ cat("\nresponse variable and predictors/potential regressors variables:\n")
 namesData <- names(dataRaw);
 print(namesData)
 
-#STRUCTURE CONTROL
+## STRUCTURE CONTROL
 
 # Check on the dataset dimension
 cat("\ndataset dimension:")

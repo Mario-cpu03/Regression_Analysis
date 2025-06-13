@@ -1,36 +1,47 @@
-## Descriptive Analysis Script
+### Descriptive Analysis Script
 
 # The descriptiveAnalysis script is used to 
 # analyze all the variables in the training set using
 # descriptive statistics methods, aiming to obtain
 # crucial characteristic quantities about the dependent 
 # variable and the predictor variables.
+
 # A graphical evaluation first will contribute to our analysis
 # by exposing quantiles and outliers; a mathematical evaluation 
 # then will provide precious informations about mean and variance.
+
 # The following script will be useful and necessary to the correlation analysis phase.
 
-# GRAPHICAL EVALUATION
+# directory containing png(s) of every relevant result
+results <- "~/Desktop/Regression_Analysis/results/"
+
+## GRAPHICAL EVALUATION
 
 # Histogram of every variable
 for (i in 1:8){
+  png(filename = paste0(results, "histogram_", names(dataRaw)[i], ".png"))
   hist(dataRaw[, i], 
        main = names(dataRaw)[i],
        xlab = names(dataRaw)[i],
        col = "blue",
        border = "black"
   )
+  dev.off()
 }
 
 # General view of each variable's box-plot
+png(filename = paste0(results, "boxplot_all_variables.png"))
 boxplot(dataRaw)
+dev.off()
 
 # Box-plot of every variable in search for eventual outliers
 for (i in 1:8){
+  png(filename = paste0(results, "boxplot_", names(dataRaw)[i], ".png"))
   boxplot(dataRaw[, i], main = names(dataRaw)[i])
+  dev.off()
 }
 
-# MATHEMATICAL EVALUATION 
+## MATHEMATICAL EVALUATION 
 
 # Summary of each variable
 cat("\nDescriptive statistics for each variable:")
