@@ -2,7 +2,11 @@
 
 # The data preprocessing script is used as a first step
 # for an explorative data analysis.
-# The following script aims to check if the dataset is clean
+# The following script aims to check if the dataset is clean.
+# Moreover, we will obtain information about the variables domains and modalities,
+# that is, with respect to the values they can assume.
+
+#PRELIMINARY CONTROLS
 
 cat("Verifying if the data set is clean...")
 
@@ -17,7 +21,14 @@ cat("\nresponse variable and predictors/potential regressors variables:\n")
 namesData <- names(dataRaw);
 print(namesData)
 
+#STRUCTURE CONTROL
+
 # Check on the dataset dimension
 cat("\ndataset dimension:")
 dimension <- dim(dataRaw);
 print(dimension)
+
+# Check on the variables domain
+# expected output: no non-numeric variables
+cat("\nvariables domain:\n")
+str(dataRaw);

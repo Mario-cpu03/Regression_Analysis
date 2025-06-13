@@ -25,7 +25,7 @@ setwd("~/Desktop/Regression_Analysis");
 
 dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv");
 
-# Explorative Analysis:
+# EXPLORATIVE ANALYSIS:
 
 source("./src/dataPreprocessing.R");
 source("./src/descriptiveAnalysis.R");
@@ -35,7 +35,7 @@ source("./src/correlationAnalysis.R");
 
 processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv"); 
 
-# Linear Model Creation:
+# LINEAR MODEL CREATION:
 
 source("./src/regressionModel.R");
 source("./src/decision.R");
