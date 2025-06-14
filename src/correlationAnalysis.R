@@ -104,10 +104,12 @@ x4x7 <- capture.output(summary(modelPoly))
 # x4_MP <-> x2_FRatio
 plot(dataRaw$x4_MP, dataRaw$x2_FRatio, main = "MegaPixels - Focal Ratio",xlab='x4_MP',ylab='x2_FRatio')
 # Polynomial Regression Model  to evaluate the statistical relevance 
-# LINEAR FACTOR
 modelPoly <- lm(x2_FRatio ~ poly(x4_MP, 1), data = dataRaw)
 x4x2 <- capture.output(summary(modelPoly))
-# p-value relevant --> x4_MP = b_0 + b_1 x2_FRatio
+# Too much casuality in the observation and way
+# too high p-value on the Intercept parameter. 
+# Though it may be statistically relevant the correlation can be explained
+# as an effect of a data set not big enough to make substantial assumptions
 
 # x5_CROP <-> x7_PixDensity
 plot(dataRaw$x5_CROP, dataRaw$x7_PixDensity, main = "Crop Factor - Density",xlab='x5_CROP',ylab='x7_PixDensity')
