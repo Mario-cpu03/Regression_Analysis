@@ -19,24 +19,24 @@
 # (delete the content and insert a different directory if you cloned the repository from GitHub
 # or delete "#" if the path is the same)
 
-setwd("~/Desktop/Regression_Analysis");
+setwd("~/Desktop/Regression_Analysis")
 
 # Import the Data Set:
 
-dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv");
+dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv")
 
 ## EXPLORATIVE ANALYSIS:
 
-source("./src/dataPreprocessing.R");
-source("./src/descriptiveAnalysis.R");
-source("./src/correlationAnalysis.R");
+source("./src/dataPreprocessing.R")
+source("./src/descriptiveAnalysis.R")
+source("./src/correlationAnalysis.R")
 
 # Import the Processed Data Set:
 
-processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv"); 
+processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv")
 
 ## LINEAR MODEL CREATION:
 
-source("./src/regressionModel.R");
-source("./src/decision.R");
-source("./src/diagnostic.R");
+source("./src/regressionModel.R")
+source("./src/decision.R")
+source("./src/diagnostic.R")
