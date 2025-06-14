@@ -17,7 +17,7 @@ results <- "~/Desktop/Regression_Analysis/results/"
 
 ## GRAPHICAL EVALUATION
 
-# Histogram of every variable
+# Histogram of Every Variable
 for (i in 1:8){
   png(filename = paste0(results, "histogram_", names(dataRaw)[i], ".png"))
   hist(dataRaw[, i], 
@@ -29,12 +29,12 @@ for (i in 1:8){
   dev.off()
 }
 
-# General view of each variable's box-plot
+# General View of each Variable's Box-plot
 png(filename = paste0(results, "boxplot_all_variables.png"))
 boxplot(dataRaw)
 dev.off()
 
-# Box-plot of every variable in search for eventual outliers
+# Box-plot of every Variable in search for eventual Outliers
 for (i in 1:8){
   png(filename = paste0(results, "boxplot_", names(dataRaw)[i], ".png"))
   boxplot(dataRaw[, i], main = names(dataRaw)[i])
@@ -43,7 +43,7 @@ for (i in 1:8){
 
 ## MATHEMATICAL EVALUATION 
 
-# Summary of each variable
+# Summary of each Variable
 cat("\nDescriptive statistics for each variable:")
 for (i in 1:8){
   cat("\nVariable: ", names(dataRaw)[i])
@@ -56,3 +56,7 @@ for (i in 1:8){
   cat("\nInterquartile Range (IQR): ", IQR(dataRaw[, i]))
   cat("\n\n")
 }
+
+#Saving a summary object in a dedicated text file
+summaryDataSet <- capture.output(summary(dataRaw))
+writeLines(summaryDataSet, "results/CharacterizedDataSet.txt")

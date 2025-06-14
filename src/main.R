@@ -21,7 +21,7 @@
 
 setwd("~/Desktop/Regression_Analysis");
 
-# Import the data set:
+# Import the Data Set:
 
 dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv");
 
@@ -31,7 +31,7 @@ source("./src/dataPreprocessing.R");
 source("./src/descriptiveAnalysis.R");
 source("./src/correlationAnalysis.R");
 
-# Import the processed data set:
+# Import the Processed Data Set:
 
 processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv"); 
 
