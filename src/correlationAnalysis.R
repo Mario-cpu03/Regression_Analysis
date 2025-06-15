@@ -58,7 +58,7 @@ pValue <- correlationMTX$P
 # Graphic Evaluation
 # Visualization of the relationships
 #png(filename = "results/scatter-plot_All.png")
-pdf("results/scatter-plot_All.png", width = 12, height = 12)
+pdf("results/scatterplots/scatter-plot_All.png", width = 12, height = 12)
 pairs(dataRaw)
 GGally::ggpairs(dataRaw)
 dev.off()
@@ -139,9 +139,9 @@ correlationOutput <- c("Summary of statistically relevant correlations:\n",
                        x5x7)
 writeLines(correlationOutput, "results/Polynomial_Regression.txt")
 
-# PROCESSED TRAINING SET - PERSISTENCE LOGIC
+## PROCESSED TRAINING SET - PERSISTENCE LOGIC
 
-# Eliminating x7_PixDensity from our dataset
+# Eliminating x7_PixDensity from the Training Set
 # due to its high correlation with x4_MP
 processedDataSet <- dataRaw[, c("y_VideoQuality","x1_ISO","x2_FRatio","x3_TIME","x4_MP", "x5_CROP", "x6_FOCAL")]
 processedData <- write.csv(processedDataSet, "data/DataSet_gruppo4-PROCESSED.csv")
