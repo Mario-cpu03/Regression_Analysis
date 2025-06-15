@@ -13,13 +13,14 @@
 # The following script will be useful and necessary to the correlation analysis phase.
 
 # directory containing png(s) of every relevant result
-results <- "~/Desktop/Regression_Analysis/results/"
+resultsBox <- "~/Desktop/Regression_Analysis/results/boxplots"
+resultsHist <- "~/Desktop/Regression_Analysis/results/histograms"
 
 ## GRAPHICAL EVALUATION
 
 # Histogram of Every Variable
 for (i in 1:8){
-  png(filename = paste0(results, "histogram_", names(dataRaw)[i], ".png"))
+  png(filename = paste0(resultsHist, "histogram_", names(dataRaw)[i], ".png"))
   hist(dataRaw[, i], 
        main = names(dataRaw)[i],
        xlab = names(dataRaw)[i],
@@ -30,13 +31,13 @@ for (i in 1:8){
 }
 
 # General View of each Variable's Box-plot
-png(filename = paste0(results, "boxplot_all_variables.png"))
+png(filename = paste0(resultsBox, "boxplot_all_variables.png"))
 boxplot(dataRaw)
 dev.off()
 
 # Box-plot of every Variable in search for eventual Outliers
 for (i in 1:8){
-  png(filename = paste0(results, "boxplot_", names(dataRaw)[i], ".png"))
+  png(filename = paste0(resultsBox, "boxplot_", names(dataRaw)[i], ".png"))
   boxplot(dataRaw[, i], main = names(dataRaw)[i])
   dev.off()
 }
