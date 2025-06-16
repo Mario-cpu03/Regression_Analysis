@@ -12,7 +12,7 @@
 
 # The following script will be useful and necessary to the correlation analysis phase.
 
-# directory containing png(s) of every relevant result
+# directory containing every relevant result
 resultsBox <- "~/Desktop/Regression_Analysis/results/boxplots/"
 resultsHist <- "~/Desktop/Regression_Analysis/results/histograms/"
 

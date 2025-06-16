@@ -20,6 +20,8 @@
 
 library(ggplot2)
 library(GGally)
+
+# directory containing every relevant result
 results <- "~/Desktop/Regression_Analysis/results/"
 
 ## CORRELATION IN THE TRAINING SET
@@ -28,7 +30,7 @@ results <- "~/Desktop/Regression_Analysis/results/"
 correlation <- cor(dataRaw)
 
 # Graphic Evaulation
-png(filename = paste0(results, "heatmap_raw_dataset.png"))
+pdf("results/heatmap_raw_dataset.pdf", width = 12, height = 12)
 corrplot::corrplot(correlation, 
                    method = "color",
                    col = colorRampPalette(c("blue", "white", "red"))(200),
@@ -62,7 +64,6 @@ pdf("results/scatterplots/scatter-plot_All.png", width = 12, height = 12)
 pairs(dataRaw)
 GGally::ggpairs(dataRaw)
 dev.off()
-
 
 # Analytic Evaluation
 # A closer look on the most interesting relationships
@@ -146,3 +147,14 @@ writeLines(correlationOutput, "results/Polynomial_Regression.txt")
 processedDataSet <- dataRaw[, c("y_VideoQuality","x1_ISO","x2_FRatio","x3_TIME","x4_MP", "x5_CROP", "x6_FOCAL")]
 processedData <- write.csv(processedDataSet, "data/DataSet_gruppo4-PROCESSED.csv")
 
+# Graphic evaluation of the Processed Training Set
+correlationProcessed <- cor(processedDataSet)
+pdf("results/heatmap_processed_dataset.pdf", width = 12, height = 12)
+corrplot::corrplot(correlationProcessed, 
+                   method = "color",
+                   col = colorRampPalette(c("blue", "white", "red"))(200),
+                   type = "upper",       
+                   tl.col = "black",
+                   tl.srt = 45,
+                   number.cex = 0.7)   
+dev.off()

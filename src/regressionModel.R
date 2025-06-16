@@ -5,9 +5,10 @@
 # between the dependent and independent variables that have been
 # identified in the descriptiveAnalysis script.
 
+# directory containing every relevant result
 results <- "~/Desktop/Regression_Analysis/results/scatterplots/"
 
-## MULTIPLE REGRESSION MODEL
+## MULTIPLE REGRESSION COMPLETE MODEL
 
 # Given the elimination from our dataset of the x7_PixDensity variable,
 # let us establish a multiple regression model without any further assumption.
@@ -16,7 +17,7 @@ completeModel <- lm(processedData$y_VideoQuality ~ processedData$x1_ISO +
      processedData$x2_FRatio + processedData$x3_TIME+ 
      processedData$x4_MP + processedData$x5_CROP + processedData$x6_FOCAL)
 
-## ALTERNATIVE REGRESSION MODEL
+## ALTERNATIVE MULTIPLE REGRESSION MODELS
 
 # As shown in the "results/Polynomial_Regression.txt" document
 # the Training Set, and the Processed - Data Set both presents a statistically 
@@ -38,18 +39,18 @@ png(filename = paste0(results, "scatter-x3-y.png"))
 plot(dataRaw$x3_TIME, dataRaw$y_VideoQuality, main = "Video Quality - Time",xlab='x3_TIME',ylab='y_VideoQuality')
 dev.off()
 # y_VideoQuality <-> x5_CROP
-png(filename = paste0(results, "scatter-x3-y.png"))
+png(filename = paste0(results, "scatter-x5.y.png"))
 plot(dataRaw$x5_CROP, dataRaw$y_VideoQuality, main = "Video Quality - Crop Factor",xlab='x5_CROP',ylab='y_VideoQuality')
 dev.off()
 
-
 # Formulation of an alternative model containing just the listed predictors
-
 alternativeModel1 <- lm(processedData$y_VideoQuality ~ processedData$x1_ISO + processedData$x2_FRatio 
                         + processedData$x3_TIME + processedData$x5_CROP)
-print(summary(alternativeModel1))
 
+# Formulation of an alternative model, using the same polynomial terms 
+# that have already been defined in correlationAnalysis.R and can be found 
+# in the "results/Polynomial_Regression.txt" file,  
+# to capture each predictor’s effect on the response variable
 alternativeModel2 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + poly(processedData$x2_FRatio,2) 
                         + poly(processedData$x3_TIME,2) + poly(processedData$x5_CROP,1))
-print(summary(alternativeModel2))
 
