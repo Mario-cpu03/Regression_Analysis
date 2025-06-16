@@ -30,7 +30,7 @@ results <- "~/Desktop/Regression_Analysis/results/"
 correlation <- cor(dataRaw)
 
 # Graphic Evaulation
-pdf("results/heatmap_raw_dataset.pdf", width = 12, height = 12)
+pdf("results/heatmaps/heatmap_raw_dataset.pdf", width = 12, height = 12)
 corrplot::corrplot(correlation, 
                    method = "color",
                    col = colorRampPalette(c("blue", "white", "red"))(200),
@@ -45,6 +45,9 @@ correlationMTX <- Hmisc::rcorr(as.matrix(dataRaw)) #???
 corr <- correlationMTX$r
 cat("\nCorrelation Matrix:\n")
 print(corr)
+
+# m.cor <- cor(dataRaw)
+# 1/(1-m.cor^2)
 
 ## HYPOTHESIS TEST
 
@@ -94,9 +97,9 @@ yx5 <- capture.output(summary(modelPoly))
 
 # x4_MP <-> x7_PixDensity
 plot(dataRaw$x4_MP, dataRaw$x7_PixDensity, main = "MegaPixels - Density",xlab='x4_MP',ylab='x7_PixDensity')
-modelPoly <- lm(x4_MP ~ poly(x7_PixDensity, 1), data = dataRaw)
+modelPoly <- lm(x7_PixDensity ~ poly(x4_MP, 1), data = dataRaw)
 x4x7 <- capture.output(summary(modelPoly))
-# p-value higly relevant --> x4_MP = b_0 + b_1 x7_PixDensity
+# p-value higly relevant --> x7_PixDensity = b_0 + b_1 x4_MP
 
 # x4_MP <-> x2_FRatio
 plot(dataRaw$x4_MP, dataRaw$x2_FRatio, main = "MegaPixels - Focal Ratio",xlab='x4_MP',ylab='x2_FRatio')
@@ -149,7 +152,7 @@ processedData <- write.csv(processedDataSet, "data/DataSet_gruppo4-PROCESSED.csv
 
 # Graphic evaluation of the Processed Training Set
 correlationProcessed <- cor(processedDataSet)
-pdf("results/heatmap_processed_dataset.pdf", width = 12, height = 12)
+pdf("results/heatmaps/heatmap_processed_dataset.pdf", width = 12, height = 12)
 corrplot::corrplot(correlationProcessed, 
                    method = "color",
                    col = colorRampPalette(c("blue", "white", "red"))(200),

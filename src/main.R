@@ -18,11 +18,9 @@
 # Setting the correct working directory:
 # (delete the content and insert a different directory if you cloned the repository from GitHub
 # or delete "#" if the path is the same)
-
 setwd("~/Desktop/Regression_Analysis")
 
 # Import the Data Set:
-
 dataRaw <- read.csv("data/DataSet_gruppo4-RAW.csv")
 
 ## EXPLORATIVE ANALYSIS:
@@ -32,7 +30,6 @@ source("./src/descriptiveAnalysis.R")
 source("./src/correlationAnalysis.R")
 
 # Import the Processed Data Set:
-
 processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv")
 
 ## LINEAR MODEL CREATION:

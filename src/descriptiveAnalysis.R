@@ -15,6 +15,7 @@
 # directory containing every relevant result
 resultsBox <- "~/Desktop/Regression_Analysis/results/boxplots/"
 resultsHist <- "~/Desktop/Regression_Analysis/results/histograms/"
+results <- "~/Desktop/Regression_Analysis/results/"
 
 ## GRAPHICAL EVALUATION
 
@@ -42,6 +43,15 @@ for (i in 1:8){
   dev.off()
 }
 
+# Q-Q plot of the response variable (y_VideoQuality) 
+# to visually assess its normality. This check can help evaluate whether
+# the residuals from the regression model follow a normal distribution.
+# Further and more formal normality tests will be conducted later in "decision.R".
+png(filename = paste0(results, "Q-Q_Plot_y.png"))
+qqnorm(dataRaw$y_VideoQuality, main = "Q-Q plot Response Variable")
+qqline(dataRaw$y_VideoQuality, col = "red")
+dev.off()
+
 ## MATHEMATICAL EVALUATION 
 
 # Summary of each Variable
@@ -58,6 +68,9 @@ for (i in 1:8){
   cat("\n\n")
 }
 
-#Saving a summary object in a dedicated text file
-summaryDataSet <- capture.output(summary(dataRaw))
+# Persistence Logic
+sDS <- capture.output(summary(dataRaw))
+summaryDataSet <- c("Summary of the non-processed Data Set:\n",
+                    sDS, "\n",
+                    "Dimension: ", dimension)
 writeLines(summaryDataSet, "results/CharacterizedDataSet.txt")

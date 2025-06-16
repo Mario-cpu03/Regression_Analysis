@@ -1,0 +1,175 @@
+Summary of statistically relevant correlations:
+
+
+Call:
+lm(formula = y_VideoQuality ~ poly(x1_ISO, 3), data = dataRaw)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-48.029 -10.702   0.306  10.461  55.518 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         54.66       1.80  30.362  < 2e-16 ***
+poly(x1_ISO, 3)1   -95.61      18.00  -5.310 7.06e-07 ***
+poly(x1_ISO, 3)2   -74.69      18.00  -4.148 7.24e-05 ***
+poly(x1_ISO, 3)3   -39.81      18.00  -2.211   0.0294 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 18 on 96 degrees of freedom
+Multiple R-squared:  0.3438,	Adjusted R-squared:  0.3233 
+F-statistic: 16.76 on 3 and 96 DF,  p-value: 7.778e-09
+
+
+
+
+Call:
+lm(formula = y_VideoQuality ~ poly(x2_FRatio, 2), data = dataRaw)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-78.511 -11.264   0.463  13.568  46.088 
+
+Coefficients:
+                    Estimate Std. Error t value Pr(>|t|)    
+(Intercept)           54.665      1.889  28.944  < 2e-16 ***
+poly(x2_FRatio, 2)1  -98.793     18.886  -5.231 9.72e-07 ***
+poly(x2_FRatio, 2)2  -55.363     18.886  -2.931  0.00421 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 18.89 on 97 degrees of freedom
+Multiple R-squared:  0.2704,	Adjusted R-squared:  0.2554 
+F-statistic: 17.98 on 2 and 97 DF,  p-value: 2.283e-07
+
+
+
+
+Call:
+lm(formula = y_VideoQuality ~ poly(x3_TIME, 2), data = dataRaw)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-66.735 -11.952   1.686  13.528  46.579 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(>|t|)    
+(Intercept)         54.665      2.062  26.513  < 2e-16 ***
+poly(x3_TIME, 2)1   58.092     20.618   2.818  0.00586 ** 
+poly(x3_TIME, 2)2   53.056     20.618   2.573  0.01159 *  
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 20.62 on 97 degrees of freedom
+Multiple R-squared:  0.1305,	Adjusted R-squared:  0.1126 
+F-statistic:  7.28 on 2 and 97 DF,  p-value: 0.001133
+
+
+
+
+Call:
+lm(formula = y_VideoQuality ~ poly(x5_CROP, 1), data = dataRaw)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-61.326 -11.408   3.411  13.456  44.146 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)        54.665      2.038  26.818  < 2e-16 ***
+poly(x5_CROP, 1)  -81.883     20.384  -4.017 0.000116 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 20.38 on 98 degrees of freedom
+Multiple R-squared:  0.1414,	Adjusted R-squared:  0.1326 
+F-statistic: 16.14 on 1 and 98 DF,  p-value: 0.0001156
+
+
+
+
+Call:
+lm(formula = x7_PixDensity ~ poly(x4_MP, 1), data = dataRaw)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-0.8932 -0.6180 -0.1010  0.5504  1.4111 
+
+Coefficients:
+                 Estimate Std. Error t value Pr(>|t|)    
+(Intercept)    -1.550e-17  6.876e-02    0.00        1    
+poly(x4_MP, 1)  7.257e+00  6.876e-01   10.55   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.6876 on 98 degrees of freedom
+Multiple R-squared:  0.5319,	Adjusted R-squared:  0.5272 
+F-statistic: 111.4 on 1 and 98 DF,  p-value: < 2.2e-16
+
+
+
+Summary of non statistically relevant correlations:
+
+
+Call:
+lm(formula = x2_FRatio ~ poly(x4_MP, 1), data = dataRaw)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.93666 -0.79820  0.02152  0.65418  1.70884 
+
+Coefficients:
+               Estimate Std. Error t value Pr(>|t|)  
+(Intercept)     0.04285    0.09514   0.450   0.6535  
+poly(x4_MP, 1) -2.07815    0.95144  -2.184   0.0313 *
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9514 on 98 degrees of freedom
+Multiple R-squared:  0.04642,	Adjusted R-squared:  0.03669 
+F-statistic: 4.771 on 1 and 98 DF,  p-value: 0.03133
+
+
+
+
+Call:
+lm(formula = x2_FRatio ~ poly(x7_PixDensity, 1), data = dataRaw)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-1.9008 -0.7421 -0.0199  0.7792  1.7145 
+
+Coefficients:
+                       Estimate Std. Error t value Pr(>|t|)   
+(Intercept)             0.04285    0.09409   0.455  0.64985   
+poly(x7_PixDensity, 1) -2.50477    0.94090  -2.662  0.00908 **
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.9409 on 98 degrees of freedom
+Multiple R-squared:  0.06744,	Adjusted R-squared:  0.05792 
+F-statistic: 7.087 on 1 and 98 DF,  p-value: 0.009077
+
+
+
+
+Call:
+lm(formula = x5_CROP ~ poly(x7_PixDensity, 2), data = dataRaw)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-2.32410 -0.85452 -0.00465  0.89806  1.64318 
+
+Coefficients:
+                        Estimate Std. Error t value Pr(>|t|)  
+(Intercept)              0.03188    0.10011   0.318   0.7509  
+poly(x7_PixDensity, 2)1  1.51864    1.00108   1.517   0.1325  
+poly(x7_PixDensity, 2)2  1.70398    1.00108   1.702   0.0919 .
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 1.001 on 97 degrees of freedom
+Multiple R-squared:  0.05087,	Adjusted R-squared:  0.0313 
+F-statistic: 2.599 on 2 and 97 DF,  p-value: 0.0795
+
