@@ -37,6 +37,8 @@ completeModelBack <- step(completeModel, direction = "backward", trace = FALSE)
 summary(completeModelBack)
 # Residuals Evaluation
 cMBRes <- residuals(completeModelBack)
+# Shapiro - Wilks test on residuals
+shapiro.test(cMBRes) #p-value = 0.108 > 0.05 --> normality verified
 # MSE
 cmbMSE <- mean(residuals(completeModelBack)^2)
 # SD Residuals
@@ -60,6 +62,8 @@ alternativeModel1Back <- step(alternativeModel1, direction = "backward", trace =
 summary(alternativeModel1)
 # Residuals evaluation
 aMB1Res <- residuals(alternativeModel1Back)
+# Shapiro - Wilks test on residuals
+shapiro.test(aMB1Res) #p-value = 0.108 > 0.05 --> normality verified
 # MSE
 amb1MSE <- mean(residuals(alternativeModel1Back)^2)
 # SD Residuals
@@ -83,6 +87,8 @@ alternativeModel2Back <- step(alternativeModel2, direction = "backward", trace =
 summary(alternativeModel2)
 # Residuals Evaluation
 aMB2Res <- residuals(alternativeModel2Back)
+# Shapiro - Wilks test on residuals
+shapiro.test(aMB2Res) #p-value = 0.2022 > 0.05 --> normality verified
 # MSE
 amb2MSE <- mean(residuals(alternativeModel2Back)^2)
 # SD Residuals
@@ -106,6 +112,8 @@ alternativeModel3Back <- step(alternativeModel3, direction = "backward", trace =
 summary(alternativeModel3)
 # Residuals Evaluation
 aMB3Res <- residuals(alternativeModel3Back)
+# Shapiro - Wilks test on residuals
+shapiro.test(aMB3Res) #p-value = 0.2157 > 0.05 --> normality verified
 # MSE
 amb3MSE <- mean(residuals(alternativeModel3Back)^2)
 # SD Residuals
@@ -134,12 +142,9 @@ aicM1 <- AIC(alternativeModel1)
 aicM2 <- AIC(alternativeModel2)
 aicM3 <- AIC(alternativeModel3)
 
+# Minimun AIC selcection
 arr <- c(aicCM,aicCMB,aicM1,aicM2,aicM3)
-selectValAic = Inf
-for (i in 1:length(arr)) {
-  if (arr[i] < selectValAic)
-    selectValAic = arr[i]
-}
+selectValAic <- min(arr)
 
 ## BAYESIAN INFORMATION CRITERION
 
@@ -150,12 +155,9 @@ bicM1 <- BIC(alternativeModel1)
 bicM2 <- BIC(alternativeModel2)
 bicM3 <- BIC(alternativeModel3)
 
+# Minimun BIC selcection
 arr <- c(bicCM,bicCMB,bicM1,bicM2,bicM3)
-selectValBic = Inf
-for (i in 1:length(arr)) {
-  if (arr[i] < selectValBic)
-    selectValBic = arr[i]
-}
+selectValBic <- min(arr)
 
 ## SELECTED MODEL
 

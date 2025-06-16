@@ -52,7 +52,41 @@ qqnorm(dataRaw$y_VideoQuality, main = "Q-Q plot Response Variable")
 qqline(dataRaw$y_VideoQuality, col = "red")
 dev.off()
 
-## MATHEMATICAL EVALUATION 
+## ANALYTIC EVALUATION 
+
+# Shapiro - Wilks test, checking for normal distribution
+
+shapiro.test(dataRaw$y_VideoQuality)
+# p-value = 0.3124 > 0.05 --> y_VideoQuality is 
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x1_ISO)
+# p-value too low --> x1_ISO is not
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x2_FRatio)
+# p-value too low --> x2_FRatio is not
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x3_TIME)
+# p-value too low --> x3_TIME is not
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x4_MP)
+# p-value too low --> x4_MP is not
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x5_CROP)
+# p-value too low --> x5_CROP is not
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x6_FOCAL)
+# p-value too low --> x6_FOCAL is not
+# distributed as a Normal random variable
+
+shapiro.test(dataRaw$x7_PixDensity)
+# p-value too low --> x7_PixDensity is not
+# distributed as a Normal random variable
 
 # Summary of each Variable
 cat("\nDescriptive statistics for each variable:")
