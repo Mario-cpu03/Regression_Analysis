@@ -18,9 +18,6 @@
 # in which every correlation will be resolved 
 # (if considered statistically relevant)
 
-library(ggplot2)
-library(GGally)
-
 # directory containing every relevant result
 results <- "~/Desktop/Regression_Analysis/results/"
 

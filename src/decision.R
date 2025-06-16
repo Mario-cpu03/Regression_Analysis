@@ -8,8 +8,7 @@
 # AIC/BIC, overall F-Test and p-values from individual t-tests will be 
 # the model's selection criteria, adopted while using backward 
 # stepwise regression to drop non-significant predictors in each model
-
-# The principle of Parsimony - Occam's Razor principle
+# as advised by the the principle of Parsimony (Occam's Razor principle)
 
 ## A FIRST EVALUATION OF THE CANDIDATE MODELS
 

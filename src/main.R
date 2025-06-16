@@ -14,7 +14,6 @@
 # an output of the "src/correlationAnalysis.R" script, named as it follows:
 # "data/DataSet_gruppo4-PROCESSED.csv".
 
-
 # Setting the correct working directory:
 # (delete the content and insert a different directory if you cloned the repository from GitHub
 # or delete "#" if the path is the same)
@@ -32,7 +31,7 @@ source("./src/correlationAnalysis.R")
 # Import the Processed Data Set:
 processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv")
 
-## LINEAR MODEL CREATION:
+## LINEAR MODEL CREATION AND EVALUATION:
 
 source("./src/regressionModel.R")
 source("./src/decision.R")
