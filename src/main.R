@@ -36,4 +36,3 @@ processedData <- read.csv("data/DataSet_gruppo4-PROCESSED.csv")
 
 source("./src/regressionModel.R")
 source("./src/decision.R")
-source("./src/diagnostic.R")
