@@ -17,6 +17,14 @@ resultsBox <- "~/Desktop/Regression_Analysis/results/boxplots/"
 resultsHist <- "~/Desktop/Regression_Analysis/results/histograms/"
 results <- "~/Desktop/Regression_Analysis/results/"
 
+## PERSISTENCE LOGIC
+
+sDS <- capture.output(summary(dataRaw))
+summaryDataSet <- c("Summary of the non-processed Data Set:\n",
+                    sDS, "\n",
+                    "Dimension: ", dimension)
+writeLines(summaryDataSet, "results/CharacterizedDataSet.txt")
+
 ## GRAPHICAL EVALUATION
 
 # Histogram of Every Variable
@@ -101,10 +109,3 @@ for (i in 1:8){
   cat("\nInterquartile Range (IQR): ", IQR(dataRaw[, i]))
   cat("\n\n")
 }
-
-# Persistence Logic
-sDS <- capture.output(summary(dataRaw))
-summaryDataSet <- c("Summary of the non-processed Data Set:\n",
-                    sDS, "\n",
-                    "Dimension: ", dimension)
-writeLines(summaryDataSet, "results/CharacterizedDataSet.txt")
