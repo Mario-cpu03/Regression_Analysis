@@ -17,7 +17,7 @@ resultsBox <- "~/Desktop/Regression_Analysis/results/boxplots/"
 resultsHist <- "~/Desktop/Regression_Analysis/results/histograms/"
 results <- "~/Desktop/Regression_Analysis/results/"
 
-## PERSISTENCE LOGIC
+# Persistence Logic
 
 sDS <- capture.output(summary(dataRaw))
 summaryDataSet <- c("Summary of the non-processed Data Set:\n",
@@ -64,37 +64,57 @@ dev.off()
 
 # Shapiro - Wilks test, checking for normal distribution
 
-shapiro.test(dataRaw$y_VideoQuality)
+shapY <- (shapiro.test(dataRaw$y_VideoQuality))
 # p-value = 0.3124 > 0.05 --> y_VideoQuality is 
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x1_ISO)
+shapX1 <- shapiro.test(dataRaw$x1_ISO)
 # p-value too low --> x1_ISO is not
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x2_FRatio)
+shapX2 <- shapiro.test(dataRaw$x2_FRatio)
 # p-value too low --> x2_FRatio is not
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x3_TIME)
+shapX3 <- shapiro.test(dataRaw$x3_TIME)
 # p-value too low --> x3_TIME is not
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x4_MP)
+shapX4 <- shapiro.test(dataRaw$x4_MP)
 # p-value too low --> x4_MP is not
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x5_CROP)
+shapX5 <- shapiro.test(dataRaw$x5_CROP)
 # p-value too low --> x5_CROP is not
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x6_FOCAL)
+shapX6 <- shapiro.test(dataRaw$x6_FOCAL)
 # p-value too low --> x6_FOCAL is not
 # distributed as a Normal random variable
 
-shapiro.test(dataRaw$x7_PixDensity)
+shapX7 <- shapiro.test(dataRaw$x7_PixDensity)
 # p-value too low --> x7_PixDensity is not
 # distributed as a Normal random variable
+
+# Persistence Logic
+shapOutY <- capture.output(print(shapY))
+shapOutX1 <- capture.output(print(shapX1))
+shapOutX2 <- capture.output(print(shapX2))
+shapOutX3 <- capture.output(print(shapX3))
+shapOutX4 <- capture.output(print(shapX4))
+shapOutX5 <- capture.output(print(shapX5))
+shapOutX6 <- capture.output(print(shapX6))
+shapOutX7 <- capture.output(print(shapX7))
+shapOut <- c("Shapiro-Wilk test for each dataRaw variable:\n",
+             shapOutY, "p-value > alpha=0.05, y_VideoQuality is distributed as a Normal random variable" , "\n",
+             shapOutX1,"p-value < alpha=0.05, x1_ISO is not distributed as a Normal random variable" ,"\n",
+             shapOutX2, "p-value < alpha=0.05, x2_FRatio is not distributed as a Normal random variable" , "\n",
+             shapOutX3, "p-value < alpha=0.05, x3_TIME is not distributed as a Normal random variable" ,"\n",
+             shapOutX4, "p-value < alpha=0.05, x4_MP is not distributed as a Normal random variable" ,"\n",
+             shapOutX5, "p-value < alpha=0.05, x5_CROP is not distributed as a Normal random variable" ,"\n",
+             shapOutX6, "p-value < alpha=0.05, x6_FOCAL is not distributed as a Normal random variable" ,"\n",
+             shapOutX7, "p-value < alpha=0.05, x7_PixDensity is not distributed as a Normal random variable")
+writeLines(shapOut, "results/Shapiro-Wilk.txt")
 
 # Summary of each Variable
 cat("\nDescriptive statistics for each variable:")

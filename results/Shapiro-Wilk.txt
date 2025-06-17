@@ -1,0 +1,72 @@
+Shapiro-Wilk test for each dataRaw variable:
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$y_VideoQuality
+W = 0.9849, p-value = 0.3124
+
+p-value > alpha=0.05, y_VideoQuality is distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x1_ISO
+W = 0.96069, p-value = 0.004508
+
+p-value < alpha=0.05, x1_ISO is not distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x2_FRatio
+W = 0.9575, p-value = 0.002678
+
+p-value < alpha=0.05, x2_FRatio is not distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x3_TIME
+W = 0.93515, p-value = 9.871e-05
+
+p-value < alpha=0.05, x3_TIME is not distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x4_MP
+W = 0.93457, p-value = 9.127e-05
+
+p-value < alpha=0.05, x4_MP is not distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x5_CROP
+W = 0.94712, p-value = 0.0005386
+
+p-value < alpha=0.05, x5_CROP is not distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x6_FOCAL
+W = 0.94806, p-value = 0.0006191
+
+p-value < alpha=0.05, x6_FOCAL is not distributed as a Normal random variable
+
+
+
+	Shapiro-Wilk normality test
+
+data:  dataRaw$x7_PixDensity
+W = 0.98484, p-value = 0.3091
+
+p-value < alpha=0.05, x7_PixDensity is not distributed as a Normal random variable
