@@ -135,7 +135,7 @@ hist(aMB3Res,
 )
 dev.off()
 # The resulting model exactly matches the third alternative model proposed
-# without applying the backward selection
+# before applying the backward selection
 
 ## AKAIKE INFORMATION CRITERION
 
@@ -163,6 +163,10 @@ bicM3 <- BIC(alternativeModel3)
 arr <- c(bicCM,bicCMB,bicM1,bicM2,bicM3)
 selectValBic <- min(arr)
 
+## CONFIDENCE INTERVAL OVER THE POTENTIALLY SELECTED MODEL'S PARAMETERS
+
+# Evaluation at the 2.5 and 97.5 percentile
+confidenceInterval <- confint(alternativeModel3Back)  
 ## SELECTED MODEL
 
 # Given the R^2 results
@@ -179,12 +183,14 @@ selectedMSE <- capture.output(cat(amb3MSE))
 selectedS <- capture.output(cat(amb3S))
 selectedSQE <- capture.output(cat(amb3SQE))
 selectedMSQE <- capture.output(cat(amb3MSQE))
+selectedConfidenceInterval <- capture.output(print(confidenceInterval))
   
 # Persistence Logic
-decisionOutput <- c( "Multiple Regression Model Chosen:\n",
+decisionOutput <- c( "Multiple Regression Model Chosen: Alternative Model 3 (Alternative Model 3 with Backward Selection)\n",
                      selectedModel, "\n",
                      "AIC:", selectedAIC, "\n",
                      "BIC:", selectedBIC, "\n",
+                     "Confidence Intervals:", selectedConfidenceInterval, "\n",
                      "MSE:", selectedMSE, "\n",
                      "SD residuals:", selectedS, "\n",
                      "SQE:", selectedSQE, "\n",
