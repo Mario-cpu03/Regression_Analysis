@@ -43,6 +43,7 @@ corr <- correlationMTX$r
 cat("\nCorrelation Matrix:\n")
 print(corr)
 
+# Multicollinearity measurement, 
 # m.cor <- cor(dataRaw)
 # 1/(1-m.cor^2)
 
@@ -56,6 +57,8 @@ print(corr)
 
 # Computing p-values
 pValue <- correlationMTX$P
+# Persistence Logic
+write.csv(data.frame(pValue), "results/Correlation_PVALUES.csv")
 
 # Graphic Evaluation
 # Visualization of the relationships
@@ -104,27 +107,30 @@ modelPoly <- lm(x2_FRatio ~ poly(x4_MP, 1), data = dataRaw)
 x4x2 <- capture.output(summary(modelPoly))
 # Too much randomness in the observation and way
 # too high p-value on the Intercept parameter. 
-# The correlation might be statistically relevant, but the dataset may be too small 
+# The correlation is statistically relevant on the b_1 parameter, but the dataset may be too small 
 # or contain too much variability for strong conclusions to be drawn.
-# Further investigation, such as increasing the sample size or refining the model, 
-# might be needed to make more substantial assumptions.
+# For this reasons those two predictors still remain into the dataset
+# Nonetheless due to the p-value we can affirm:
+# p-value relevant --> x2_FRatio = b_0 + b_1 x4_MP
 
 # x5_CROP <-> x7_PixDensity
 plot(dataRaw$x5_CROP, dataRaw$x7_PixDensity, main = "Crop Factor - Density",xlab='x5_CROP',ylab='x7_PixDensity')
-modelPoly <- lm(x5_CROP ~ poly(x7_PixDensity, 2), data = dataRaw)
+modelPoly <- lm(x7_PixDensity ~ poly(x5_CROP, 2), data = dataRaw)
 x5x7 <- capture.output(summary(modelPoly))
-# p-values are way too high --> HO ACCEPTED
+# p-values are way too high on the Intercept and b_0 parameter.
+# Nevertheless due to the p-value we can affirm:
+# p-value higli relevant --> x7_PixDensity = b_2 x5_CROP^2
 
 # x2_FRatio <-> x7_PixDensity
 plot(dataRaw$x2_FRatio, dataRaw$x7_PixDensity, main = "Focal Ratio - Density",xlab='x2_FRatio',ylab='x7_PixDensity')
-modelPoly <- lm(x2_FRatio ~ poly(x7_PixDensity, 1), data = dataRaw)
+modelPoly <- lm(x7_PixDensity ~ poly(x2_FRatio, 1), data = dataRaw)
 x2x7 <- capture.output(summary(modelPoly))
 # Too much randomness in the observation and way
 # too high p-value on the Intercept parameter. 
-# The correlation might be statistically relevant, but the dataset may be too small 
+# The correlation is statistically relevant on the b_1 parameter, but the dataset may be too small 
 # or contain too much variability for strong conclusions to be drawn.
-# Further investigation, such as increasing the sample size or refining the model, 
-# might be needed to make more substantial assumptions.
+# Nonetheless due to the p-value we can affirm:
+# p-value relevant --> x7_PixDensity = b_1 x2_FRatio
 
 ## SUMMARY
 
@@ -134,16 +140,17 @@ correlationOutput <- c("Summary of statistically relevant correlations:\n",
                        yx3, "\n",
                        yx5, "\n",
                        x4x7, "\n",
-                       "Summary of non statistically relevant correlations:\n",
                        x4x2, "\n",
                        x2x7, "\n", 
-                       x5x7)
+                       x5x7, "\n",
+                       "Please note that each correlation found in the dataset is statistically relevant but not each one of them represent a real problem for the Covariance Matrix of the regression model.\n",
+                       "Let x4x2 be an example: there is a relevant correlation but not a preoccupying collinearity such that it would justify the exclusion of one of them from the data set.")
 writeLines(correlationOutput, "results/Polynomial_Regression.txt")
 
 ## PROCESSED TRAINING SET - PERSISTENCE LOGIC
 
 # Eliminating x7_PixDensity from the Training Set
-# due to its high correlation with x4_MP
+# due to its high correlation with x4_MP and other predictors
 processedDataSet <- dataRaw[, c("y_VideoQuality","x1_ISO","x2_FRatio","x3_TIME","x4_MP", "x5_CROP", "x6_FOCAL")]
 processedData <- write.csv(processedDataSet, "data/DataSet_gruppo4-PROCESSED.csv")
 

@@ -10,7 +10,7 @@
 # stepwise regression to drop non-significant predictors in each model
 # as advised by the the principle of Parsimony (Occam's Razor principle)
 
-resultsModel <- "~/Desktop/Regression_Analysis/results/models"
+resultsModel <- "~/Desktop/Regression_Analysis/results/models/"
 
 ## A FIRST EVALUATION OF THE CANDIDATE MODELS
 
@@ -55,6 +55,7 @@ hist(cMBRes,
      col = "blue",
      border = "black"
      )
+dev.off()
 # The resulting model exactly matches the first alternative model proposed
 # without applying the backward selection
 
@@ -80,6 +81,7 @@ hist(aMB1Res,
      col = "blue",
      border = "black"
 )
+dev.off()
 # The resulting model exactly matches the first alternative model proposed
 # without applying the backward selection
 
@@ -105,6 +107,7 @@ hist(aMB2Res,
      col = "blue",
      border = "black"
 )
+dev.off()
 # The resulting model exactly matches the second alternative model proposed
 # without applying the backward selection
 
@@ -130,6 +133,7 @@ hist(aMB3Res,
      col = "blue",
      border = "black"
 )
+dev.off()
 # The resulting model exactly matches the third alternative model proposed
 # without applying the backward selection
 
