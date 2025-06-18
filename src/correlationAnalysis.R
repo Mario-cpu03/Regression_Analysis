@@ -113,14 +113,6 @@ x4x2 <- capture.output(summary(modelPoly))
 # Nonetheless due to the p-value we can affirm:
 # p-value relevant --> x2_FRatio = b_0 + b_1 x4_MP
 
-# x5_CROP <-> x7_PixDensity
-plot(dataRaw$x5_CROP, dataRaw$x7_PixDensity, main = "Crop Factor - Density",xlab='x5_CROP',ylab='x7_PixDensity')
-modelPoly <- lm(x7_PixDensity ~ poly(x5_CROP, 2), data = dataRaw)
-x5x7 <- capture.output(summary(modelPoly))
-# p-values are way too high on the Intercept and b_0 parameter.
-# Nevertheless due to the p-value we can affirm:
-# p-value higli relevant --> x7_PixDensity = b_2 x5_CROP^2
-
 # x2_FRatio <-> x7_PixDensity
 plot(dataRaw$x2_FRatio, dataRaw$x7_PixDensity, main = "Focal Ratio - Density",xlab='x2_FRatio',ylab='x7_PixDensity')
 modelPoly <- lm(x7_PixDensity ~ poly(x2_FRatio, 1), data = dataRaw)
@@ -142,7 +134,6 @@ correlationOutput <- c("Summary of statistically relevant correlations:\n",
                        x4x7, "\n",
                        x4x2, "\n",
                        x2x7, "\n", 
-                       x5x7, "\n",
                        "Please note that each correlation found in the dataset is statistically relevant but not each one of them represent a real problem for the Covariance Matrix of the regression model.\n",
                        "Let x4x2 be an example: there is a relevant correlation but not a preoccupying collinearity such that it would justify the exclusion of one of them from the data set.")
 writeLines(correlationOutput, "results/Polynomial_Regression.txt")
@@ -153,7 +144,7 @@ writeLines(correlationOutput, "results/Polynomial_Regression.txt")
 # due to its high correlation with x4_MP and other predictors
 processedDataSet <- dataRaw[, c("y_VideoQuality","x1_ISO","x2_FRatio","x3_TIME","x4_MP", "x5_CROP", "x6_FOCAL")]
 processedData <- write.csv(processedDataSet, "data/DataSet_gruppo4-PROCESSED.csv")
-headerData(processedDataSet)
+head(processedDataSet)
 
 # Graphic evaluation of the Processed Training Set
 correlationProcessed <- cor(processedDataSet)

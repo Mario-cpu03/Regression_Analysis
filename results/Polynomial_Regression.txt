@@ -151,28 +151,6 @@ F-statistic: 7.087 on 1 and 98 DF,  p-value: 0.009077
 
 
 
-
-Call:
-lm(formula = x7_PixDensity ~ poly(x5_CROP, 2), data = dataRaw)
-
-Residuals:
-     Min       1Q   Median       3Q      Max 
--1.36053 -0.65384 -0.01898  0.66608  1.61960 
-
-Coefficients:
-                    Estimate Std. Error t value Pr(>|t|)    
-(Intercept)       -3.534e-17  7.869e-02   0.000   1.0000    
-poly(x5_CROP, 2)1  1.493e+00  7.869e-01   1.897   0.0607 .  
-poly(x5_CROP, 2)2  6.059e+00  7.869e-01   7.699 1.16e-11 ***
----
-Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
-
-Residual standard error: 0.7869 on 97 degrees of freedom
-Multiple R-squared:  0.3933,	Adjusted R-squared:  0.3808 
-F-statistic: 31.44 on 2 and 97 DF,  p-value: 2.982e-11
-
-
-
 Please note that each correlation found in the dataset is statistically relevant but not each one of them represent a real problem for the Covariance Matrix of the regression model.
 
 Let x4x2 be an example: there is a relevant correlation but not a preoccupying collinearity such that it would justify the exclusion of one of them from the data set.
