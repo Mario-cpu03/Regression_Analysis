@@ -63,7 +63,7 @@ write.csv(data.frame(pValue), "results/Correlation_PVALUES.csv")
 # Graphic Evaluation
 # Visualization of the relationships
 #png(filename = "results/scatter-plot_All.png")
-pdf("results/scatterplots/scatter-plot_All.png", width = 12, height = 12)
+pdf("results/scatterplots/scatter-plot_All.pdf", width = 12, height = 12)
 pairs(dataRaw, upper.panel = NULL)
 GGally::ggpairs(dataRaw)
 dev.off()

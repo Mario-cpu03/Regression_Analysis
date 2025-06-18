@@ -54,6 +54,8 @@ alternativeModel1 <- lm(processedData$y_VideoQuality ~ processedData$x1_ISO + pr
 alternativeModel2 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + poly(processedData$x2_FRatio,2) 
                         + poly(processedData$x3_TIME,2) + poly(processedData$x5_CROP,1))
 
+
+
 alternativeModel3 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + poly(processedData$x2_FRatio,2) 
                         + poly(processedData$x3_TIME,1) + poly(processedData$x5_CROP,1))
 
