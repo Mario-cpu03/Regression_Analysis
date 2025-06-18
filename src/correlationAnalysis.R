@@ -153,6 +153,7 @@ writeLines(correlationOutput, "results/Polynomial_Regression.txt")
 # due to its high correlation with x4_MP and other predictors
 processedDataSet <- dataRaw[, c("y_VideoQuality","x1_ISO","x2_FRatio","x3_TIME","x4_MP", "x5_CROP", "x6_FOCAL")]
 processedData <- write.csv(processedDataSet, "data/DataSet_gruppo4-PROCESSED.csv")
+headerData(processedDataSet)
 
 # Graphic evaluation of the Processed Training Set
 correlationProcessed <- cor(processedDataSet)
