@@ -2,24 +2,23 @@ Summary of statistically relevant correlations:
 
 
 Call:
-lm(formula = y_VideoQuality ~ poly(x1_ISO, 3), data = dataRaw)
+lm(formula = y_VideoQuality ~ poly(x1_ISO, 2), data = dataRaw)
 
 Residuals:
     Min      1Q  Median      3Q     Max 
--48.029 -10.702   0.306  10.461  55.518 
+-50.901  -8.793  -0.681  13.040  60.194 
 
 Coefficients:
                  Estimate Std. Error t value Pr(>|t|)    
-(Intercept)         54.66       1.80  30.362  < 2e-16 ***
-poly(x1_ISO, 3)1   -95.61      18.00  -5.310 7.06e-07 ***
-poly(x1_ISO, 3)2   -74.69      18.00  -4.148 7.24e-05 ***
-poly(x1_ISO, 3)3   -39.81      18.00  -2.211   0.0294 *  
+(Intercept)        54.665      1.836  29.771  < 2e-16 ***
+poly(x1_ISO, 2)1  -95.612     18.362  -5.207 1.08e-06 ***
+poly(x1_ISO, 2)2  -74.685     18.362  -4.067 9.68e-05 ***
 ---
 Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
 
-Residual standard error: 18 on 96 degrees of freedom
-Multiple R-squared:  0.3438,	Adjusted R-squared:  0.3233 
-F-statistic: 16.76 on 3 and 96 DF,  p-value: 7.778e-09
+Residual standard error: 18.36 on 97 degrees of freedom
+Multiple R-squared:  0.3104,	Adjusted R-squared:  0.2962 
+F-statistic: 21.83 on 2 and 97 DF,  p-value: 1.488e-08
 
 
 

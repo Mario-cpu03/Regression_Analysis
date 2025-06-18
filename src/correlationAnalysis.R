@@ -73,9 +73,10 @@ dev.off()
 # with a Polynomial Regression Model  to evaluate the statistical relevance 
 # y_VideoQuality <-> x1_ISO
 plot(dataRaw$x1_ISO, dataRaw$y_VideoQuality, main = "ISO - Video Quality",xlab='x1_ISO',ylab='y_VideoQuality')
-modelPoly <- lm(y_VideoQuality ~ poly(x1_ISO, 3), data = dataRaw)
+modelPoly <- lm(y_VideoQuality ~ poly(x1_ISO, 2), data = dataRaw)
+summary(modelPoly)
 yx1 <- capture.output(summary(modelPoly))
-# p-value higly relevant --> y_VideoQuality = b_0 + b_1 x1_ISO + b_2 x1_ISO^2 + b_3 x1_ISO^3
+# p-value higly relevant --> y_VideoQuality = b_0 + b_1 x1_ISO + b_2 x1_ISO^2
 
 # y_VideoQuality <-> x2_FRatio
 plot(dataRaw$x2_FRatio, dataRaw$y_VideoQuality, main = "Focal Ratio - Video Quality",xlab='x2_FRatio',ylab='y_VideoQuality')

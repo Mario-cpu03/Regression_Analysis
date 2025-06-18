@@ -51,13 +51,44 @@ alternativeModel1 <- lm(processedData$y_VideoQuality ~ processedData$x1_ISO + pr
 # that have already been defined in correlationAnalysis.R, (see "results/Polynomial_Regression.txt" 
 # file, section "Summary of statistically relevant correlations:"), 
 # to capture each predictor’s effect on the response variable
-alternativeModel2 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + poly(processedData$x2_FRatio,2) 
-                        + poly(processedData$x3_TIME,2) + poly(processedData$x5_CROP,1))
+alternativeModel2 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + 
+                          poly(processedData$x2_FRatio,2) 
+                        + poly(processedData$x3_TIME,2) 
+                        + poly(processedData$x5_CROP,1))
+# Construction of a new dataframe in order to evaluate correlation on the new variables
+dataModel2 <- data.frame(processedData$y_VideoQuality,
+                           processedData$x1_ISO,
+                           (processedData$x1_ISO)^2,
+                           processedData$x2_FRatio,
+                           (processedData$x2_FRatio)^2,
+                           processedData$x3_TIME,
+                           (processedData$x3_TIME)^2,
+                           processedData$x5_CROP)
+correlationMTX <- Hmisc::rcorr(as.matrix(dataModel2)) #???
+corr <- correlationMTX$r
+cat("\nCorrelation Matrix:\n")
+print(corr)
+GGally::ggpairs(dataModel2)
+# Absence of significant correlations 
 
-
-
-alternativeModel3 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + poly(processedData$x2_FRatio,2) 
-                        + poly(processedData$x3_TIME,1) + poly(processedData$x5_CROP,1))
+alternativeModel3 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + 
+                          poly(processedData$x2_FRatio,2) 
+                        + poly(processedData$x3_TIME,1) 
+                        + poly(processedData$x5_CROP,1))
+# Construction of a new dataframe in order to evaluate correlation on the new variables
+dataModel3 <- data.frame(processedData$y_VideoQuality,
+                         processedData$x1_ISO,
+                         (processedData$x1_ISO)^2,
+                         processedData$x2_FRatio,
+                         (processedData$x2_FRatio)^2,
+                         processedData$x3_TIME,
+                         processedData$x5_CROP)
+correlationMTX <- Hmisc::rcorr(as.matrix(dataModel3)) #???
+corr <- correlationMTX$r
+cat("\nCorrelation Matrix:\n")
+print(corr)
+GGally::ggpairs(dataModel3)
+# Absence of significant correlations 
 
 ## SUMMARY CANDIDATE MODELS
 
