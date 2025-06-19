@@ -167,6 +167,7 @@ selectValBic <- min(arr)
 
 # Evaluation at the 2.5 and 97.5 percentile
 confidenceInterval <- confint(alternativeModel3Back)  
+
 ## SELECTED MODEL
 
 # Given the R^2 results
