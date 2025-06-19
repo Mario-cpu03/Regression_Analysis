@@ -71,25 +71,6 @@ print(corr)
 GGally::ggpairs(dataModel2)
 # Absence of significant correlations 
 
-alternativeModel3 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + 
-                          poly(processedData$x2_FRatio,2) 
-                        + poly(processedData$x3_TIME,1) 
-                        + poly(processedData$x5_CROP,1))
-# Construction of a new dataframe in order to evaluate correlation on the new variables
-dataModel3 <- data.frame(processedData$y_VideoQuality,
-                         processedData$x1_ISO,
-                         (processedData$x1_ISO)^2,
-                         processedData$x2_FRatio,
-                         (processedData$x2_FRatio)^2,
-                         processedData$x3_TIME,
-                         processedData$x5_CROP)
-correlationMTX <- Hmisc::rcorr(as.matrix(dataModel3)) #???
-corr <- correlationMTX$r
-cat("\nCorrelation Matrix:\n")
-print(corr)
-GGally::ggpairs(dataModel3)
-# Absence of significant correlations 
-
 ## SUMMARY CANDIDATE MODELS
 
 cm <- capture.output(summary(completeModel))
@@ -98,12 +79,9 @@ am1 <- capture.output(summary(alternativeModel1))
 
 am2 <- capture.output(summary(alternativeModel2))
 
-am3 <- capture.output(summary(alternativeModel3))
-
 # Persistence Logic
 modelOutput <- c( "Summary of candidate models:\n",
                   cm, "\n",
                   am1, "\n",
-                  am2, "\n",
-                  am3)
+                  am2)
 writeLines(modelOutput, "results/Multiple_Regression.txt")

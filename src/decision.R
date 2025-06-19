@@ -26,10 +26,6 @@ pdf("results/models/AlternativeModel2.pdf", width=15, height=15)
 plot(alternativeModel2)
 dev.off()
 
-pdf("results/models/AlternativeModel3.pdf", width=15, height=15)
-plot(alternativeModel3)
-dev.off()
-
 ## BACKWARD SELECTION 
 
 # Perform a backward selection on each model
@@ -61,6 +57,7 @@ dev.off()
 
 alternativeModel1Back <- step(alternativeModel1, direction = "backward", trace = FALSE)
 summary(alternativeModel1)
+summary(alternativeModel1Back)
 # Residuals evaluation
 aMB1Res <- residuals(alternativeModel1Back)
 # Shapiro - Wilks test on residuals
@@ -86,7 +83,7 @@ dev.off()
 # without applying the backward selection
 
 alternativeModel2Back <- step(alternativeModel2, direction = "backward", trace = FALSE)
-summary(alternativeModel2)
+summary(alternativeModel2Back)
 # Residuals Evaluation
 aMB2Res <- residuals(alternativeModel2Back)
 # Shapiro - Wilks test on residuals
@@ -111,20 +108,44 @@ dev.off()
 # The resulting model exactly matches the second alternative model proposed
 # without applying the backward selection
 
-alternativeModel3Back <- step(alternativeModel3, direction = "backward", trace = FALSE)
+# Please note that the alternativeModel3 is obtained as the correct version of the alternativeModel2Back
+alternativeModel3 <- lm(processedData$y_VideoQuality ~ poly(processedData$x1_ISO,2) + 
+                              poly(processedData$x2_FRatio,2) 
+                            + poly(processedData$x3_TIME,1) 
+                            + poly(processedData$x5_CROP,1))
+# Construction of a new dataframe in order to evaluate correlation on the new variables
+dataModel3 <- data.frame(processedData$y_VideoQuality,
+                         processedData$x1_ISO,
+                         (processedData$x1_ISO)^2,
+                         processedData$x2_FRatio,
+                         (processedData$x2_FRatio)^2,
+                         processedData$x3_TIME,
+                         processedData$x5_CROP)
+correlationMTX <- Hmisc::rcorr(as.matrix(dataModel3)) #???
+corr <- correlationMTX$r
+cat("\nCorrelation Matrix:\n")
+print(corr)
+GGally::ggpairs(dataModel3)
+# Absence of significant correlations 
+
+# evaluation of the new model
+pdf("results/models/AlternativeModel3.pdf", width=15, height=15)
+plot(alternativeModel3)
+dev.off()
+
 summary(alternativeModel3)
 # Residuals Evaluation
-aMB3Res <- residuals(alternativeModel3Back)
+aMB3Res <- residuals(alternativeModel3)
 # Shapiro - Wilks test on residuals
 shapiro.test(aMB3Res) #p-value = 0.2157 > 0.05 --> normality verified
 # MSE
-amb3MSE <- mean(residuals(alternativeModel3Back)^2)
+amb3MSE <- mean(residuals(alternativeModel3)^2)
 # SD Residuals
-amb3S <- sd(residuals(alternativeModel3Back))
+amb3S <- sd(residuals(alternativeModel3))
 # SQE
-amb3SQE <- sum(residuals(alternativeModel3Back)^2)
+amb3SQE <- sum(residuals(alternativeModel3)^2)
 # MeanSQE
-amb3MSQE <- amb3MSE / (length(residuals(alternativeModel3Back)) - length(coef(alternativeModel3Back)))
+amb3MSQE <- amb3MSE / (length(residuals(alternativeModel3)) - length(coef(alternativeModel3)))
 # Residual's histogram
 png(filename = paste0(resultsModel, "Histogram_res_AM3.png"))
 hist(aMB3Res,
@@ -166,7 +187,7 @@ selectValBic <- min(arr)
 ## CONFIDENCE INTERVAL OVER THE POTENTIALLY SELECTED MODEL'S PARAMETERS
 
 # Evaluation at the 2.5 and 97.5 percentile
-confidenceInterval <- confint(alternativeModel3Back)  
+confidenceInterval <- confint(alternativeModel3)  
 
 ## SELECTED MODEL
 
@@ -174,9 +195,9 @@ confidenceInterval <- confint(alternativeModel3Back)
 # the high significance of the p-values of each parameter 
 # the lowest BIC and AIC score
 # and the high F-Statistic value (see results/models/Backward.txt), 
-# alternativeModel3 (which is identical to alternativeModelBack3)
+# alternativeModel3 (which is to intend as the correct version of the alternativeModel2Back)
 # is the chosen model. A more profund view may be found in "results/models/Chosen.txt"
-selectedModel <- capture.output(summary(alternativeModel3Back)) 
+selectedModel <- capture.output(summary(alternativeModel3)) 
 #selectedModel <- capture.output(summary(alternativeModel3)) 
 selectedAIC <- capture.output(cat(selectValAic))
 selectedBIC <- capture.output(cat(selectValBic))
@@ -187,7 +208,7 @@ selectedMSQE <- capture.output(cat(amb3MSQE))
 selectedConfidenceInterval <- capture.output(print(confidenceInterval))
   
 # Persistence Logic
-decisionOutput <- c( "Multiple Regression Model Chosen: Alternative Model 3 (Alternative Model 3 with Backward Selection)\n",
+decisionOutput <- c( "Multiple Regression Model Chosen: Alternative Model 3 (Alternative Model 2 with Backward Selection)\n",
                      selectedModel, "\n",
                      "AIC:", selectedAIC, "\n",
                      "BIC:", selectedBIC, "\n",

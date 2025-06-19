@@ -1,4 +1,4 @@
-Multiple Regression Model Chosen: Alternative Model 3 (Alternative Model 3 with Backward Selection)
+Multiple Regression Model Chosen: Alternative Model 3 (Alternative Model 2 with Backward Selection)
 
 
 Call:

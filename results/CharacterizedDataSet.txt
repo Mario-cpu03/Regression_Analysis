@@ -1,19 +1,19 @@
 Summary of the non-processed Data Set:
 
- y_VideoQuality       x1_ISO           x2_FRatio           x3_TIME            x4_MP         
- Min.   :-16.00   Min.   :-1.72451   Min.   :-1.67486   Min.   :-1.6525   Min.   :-1.64276  
- 1st Qu.: 40.76   1st Qu.:-0.80196   1st Qu.:-0.73999   1st Qu.:-1.0902   1st Qu.:-0.95462  
- Median : 56.75   Median :-0.03037   Median : 0.11254   Median :-0.1652   Median :-0.07534  
- Mean   : 54.66   Mean   :-0.05141   Mean   : 0.04285   Mean   :-0.1147   Mean   : 0.01163  
- 3rd Qu.: 66.84   3rd Qu.: 0.65099   3rd Qu.: 0.76639   3rd Qu.: 0.7661   3rd Qu.: 0.96147  
- Max.   :110.74   Max.   : 1.71675   Max.   : 1.72301   Max.   : 1.6369   Max.   : 1.71967  
-    x5_CROP            x6_FOCAL        x7_PixDensity     
- Min.   :-1.70328   Min.   :-1.72865   Min.   :-1.92564  
- 1st Qu.:-0.86830   1st Qu.:-0.83963   1st Qu.:-0.71872  
- Median :-0.05079   Median :-0.01376   Median : 0.01969  
- Mean   : 0.03188   Mean   : 0.04574   Mean   : 0.00000  
- 3rd Qu.: 0.99702   3rd Qu.: 0.97996   3rd Qu.: 0.71775  
- Max.   : 1.69710   Max.   : 1.73089   Max.   : 2.45975  
+ y_VideoQuality       x1_ISO           x2_FRatio           x3_TIME            x4_MP             x5_CROP        
+ Min.   :-16.00   Min.   :-1.72451   Min.   :-1.67486   Min.   :-1.6525   Min.   :-1.64276   Min.   :-1.70328  
+ 1st Qu.: 40.76   1st Qu.:-0.80196   1st Qu.:-0.73999   1st Qu.:-1.0902   1st Qu.:-0.95462   1st Qu.:-0.86830  
+ Median : 56.75   Median :-0.03037   Median : 0.11254   Median :-0.1652   Median :-0.07534   Median :-0.05079  
+ Mean   : 54.66   Mean   :-0.05141   Mean   : 0.04285   Mean   :-0.1147   Mean   : 0.01163   Mean   : 0.03188  
+ 3rd Qu.: 66.84   3rd Qu.: 0.65099   3rd Qu.: 0.76639   3rd Qu.: 0.7661   3rd Qu.: 0.96147   3rd Qu.: 0.99702  
+ Max.   :110.74   Max.   : 1.71675   Max.   : 1.72301   Max.   : 1.6369   Max.   : 1.71967   Max.   : 1.69710  
+    x6_FOCAL        x7_PixDensity     
+ Min.   :-1.72865   Min.   :-1.92564  
+ 1st Qu.:-0.83963   1st Qu.:-0.71872  
+ Median :-0.01376   Median : 0.01969  
+ Mean   : 0.04574   Mean   : 0.00000  
+ 3rd Qu.: 0.97996   3rd Qu.: 0.71775  
+ Max.   : 1.73089   Max.   : 2.45975  
 
 
 Dimension: 
