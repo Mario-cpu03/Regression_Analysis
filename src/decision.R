@@ -19,7 +19,8 @@ plot(completeModel)
 dev.off()
 
 pdf("results/models/AlternativeModel1.pdf", width=15, height=15)
-plot(alternativeModel1)
+
+
 dev.off()
 
 pdf("results/models/AlternativeModel2.pdf", width=15, height=15)
@@ -86,7 +87,7 @@ alternativeModel2Back <- step(alternativeModel2, direction = "backward", trace =
 summary(alternativeModel2Back)
 # Residuals Evaluation
 aMB2Res <- residuals(alternativeModel2Back)
-# Shapiro - Wilks test on residuals
+# Shapiro - Wilk test on residuals
 shapiro.test(aMB2Res) #p-value = 0.2022 > 0.05 --> normality verified
 # MSE
 amb2MSE <- mean(residuals(alternativeModel2Back)^2)
