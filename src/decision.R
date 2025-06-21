@@ -19,8 +19,7 @@ plot(completeModel)
 dev.off()
 
 pdf("results/models/AlternativeModel1.pdf", width=15, height=15)
-
-
+plot(alternativeModel1)
 dev.off()
 
 pdf("results/models/AlternativeModel2.pdf", width=15, height=15)
