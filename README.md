@@ -31,7 +31,7 @@ Il progetto riguarda l'analisi di regressione su un dataset. L'obiettivo princip
 
 ### Contatti:
 Per domande o suggerimenti, contattare:
-- Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it
+- Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it o marioambrosone03@gmail.com
 - Emanuele Barbato: e.barbato7@studenti.unisa.it
 - Luca Celentano: l.celentano14@studenti.unisa.it
 - Francesco De Bonis: f.debonis4@studenti.unisa.it
@@ -72,7 +72,7 @@ The project focuses on regression analysis of a dataset. The main goal is to ana
 
 ### Contacts:
 For questions or suggestions, contact:
-- Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it
+- Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it or marioambrosone03@gmail.com
 - Emanuele Barbato: e.barbato7@studenti.unisa.it
 - Luca Celentano: l.celentano14@studenti.unisa.it
 - Francesco De Bonis: f.debonis4@studenti.unisa.it
