@@ -24,7 +24,7 @@ Il progetto riguarda l'analisi di regressione su un dataset. L'obiettivo princip
 ### Come eseguire il progetto:
 1. Clonare il repository:
     ```bash
-    git clone https://github.com/tuo_username/Regression_Analysis.git
+    git clone https://github.com/Mario-cpu03/Regression_Analysis.git
     ```
 2. Aprire il progetto in RStudio.
 3. Eseguire gli script della cartella `src/` per eseguire l'analisi.
@@ -65,7 +65,7 @@ The project focuses on regression analysis of a dataset. The main goal is to ana
 ### How to Run the Project:
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your_username/Regression_Analysis.git
+    git clone https://github.com/Mario-cpu03/Regression_Analysis.git
     ```
 2. Open the project in RStudio.
 3. Run the scripts in the `src/` folder to perform the analysis.
