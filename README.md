@@ -1,8 +1,6 @@
 # Regression Analysis - Applied Statistics (ENG)
 
-## Group 4
-
-### Group Members:
+### Development Team:
 - Mario Pellegrino Ambrosone
 - Emanuele Barbato
 - Luca Celentano
@@ -42,9 +40,7 @@ For questions or suggestions, contact:
 
 # Regression Analysis - Statistica Applicata (IT)
 
-## Gruppo 4
-
-### Membri del gruppo:
+### Team di Sviluppo:
 - Mario Pellegrino Ambrosone
 - Emanuele Barbato
 - Luca Celentano
