@@ -1,44 +1,3 @@
-# Regression Analysis - Statistica Applicata (IT)
-
-## Gruppo 4
-
-### Membri del gruppo:
-- Mario Pellegrino Ambrosone
-- Emanuele Barbato
-- Luca Celentano
-- Francesco De Bonis
-
-### Descrizione del progetto:
-Il progetto riguarda l'analisi di regressione su un dataset. L'obiettivo principale è l'analisi di correlazione tra variabili e la costruzione di un modello di regressione lineare per prevedere una variabile dipendente in funzione di variabili indipendenti. Verranno applicate diverse tecniche statistiche tra cui analisi descrittiva, test di ipotesi e stima degli intervalli di confidenza.
-
-### Struttura generale del repository:
-- **data/**: Contiene il dataset utilizzato nel progetto.
-- **src/**: Contiene il codice R per l'analisi e la creazione del modello di regressione.
-- **docs/**: Contiene la documentazione del progetto in formato PDF.
-- **results/**: Contiene i risultati elaborati dal codice.
-- **README.md**: Questo file che descrive il progetto.
-- **Regression_analysis.Rproj**: Il file del progetto RStudio.
-
-![Rappresentazione grafica della struttura](./assets/Struttura_IT.png)
-
-### Come eseguire il progetto:
-1. Clonare il repository:
-    ```bash
-    git clone https://github.com/Mario-cpu03/Regression_Analysis.git
-    ```
-2. Aprire il progetto in RStudio.
-3. Eseguire gli script della cartella `src/` per eseguire l'analisi.
-
-### Contatti:
-Per domande o suggerimenti, contattare:
-- Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it o marioambrosone03@gmail.com
-- Emanuele Barbato: e.barbato7@studenti.unisa.it
-- Luca Celentano: l.celentano14@studenti.unisa.it
-- Francesco De Bonis: f.debonis4@studenti.unisa.it
-
---------------------------------------------------------------------
-
-
 # Regression Analysis - Applied Statistics (ENG)
 
 ## Group 4
@@ -73,6 +32,48 @@ The project focuses on regression analysis of a dataset. The main goal is to ana
 ### Contacts:
 For questions or suggestions, contact:
 - Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it or marioambrosone03@gmail.com
+- Emanuele Barbato: e.barbato7@studenti.unisa.it
+- Luca Celentano: l.celentano14@studenti.unisa.it
+- Francesco De Bonis: f.debonis4@studenti.unisa.it
+
+
+--------------------------------------------------------------------
+
+
+# Regression Analysis - Statistica Applicata (IT)
+
+## Gruppo 4
+
+### Membri del gruppo:
+- Mario Pellegrino Ambrosone
+- Emanuele Barbato
+- Luca Celentano
+- Francesco De Bonis
+
+### Descrizione del progetto:
+Il progetto riguarda l'analisi di regressione su un dataset. L'obiettivo principale è l'analisi di correlazione tra variabili e la costruzione di un modello di regressione lineare per prevedere una variabile dipendente in funzione di variabili indipendenti. Verranno applicate diverse tecniche statistiche tra cui analisi descrittiva, test di ipotesi e stima degli intervalli di confidenza.
+
+### Struttura generale del repository:
+- **data/**: Contiene il dataset utilizzato nel progetto.
+- **src/**: Contiene il codice R per l'analisi e la creazione del modello di regressione.
+- **docs/**: Contiene la documentazione del progetto in formato PDF.
+- **results/**: Contiene i risultati elaborati dal codice.
+- **README.md**: Questo file che descrive il progetto.
+- **Regression_analysis.Rproj**: Il file del progetto RStudio.
+
+![Rappresentazione grafica della struttura](./assets/Struttura_IT.png)
+
+### Come eseguire il progetto:
+1. Clonare il repository:
+    ```bash
+    git clone https://github.com/Mario-cpu03/Regression_Analysis.git
+    ```
+2. Aprire il progetto in RStudio.
+3. Eseguire gli script della cartella `src/` per eseguire l'analisi.
+
+### Contatti:
+Per domande o suggerimenti, contattare:
+- Mario Pellegrino Ambrosone: m.ambrosone12@studenti.unisa.it o marioambrosone03@gmail.com
 - Emanuele Barbato: e.barbato7@studenti.unisa.it
 - Luca Celentano: l.celentano14@studenti.unisa.it
 - Francesco De Bonis: f.debonis4@studenti.unisa.it
