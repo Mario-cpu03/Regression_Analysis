@@ -6,7 +6,7 @@
 - Luca Celentano
 - Francesco De Bonis
 
-### Project Description:
+### Project Overview:
 The project focuses on regression analysis of a dataset. The main goal is to analyze the correlation between variables and construct a linear regression model to predict a dependent variable based on independent variables. Various statistical techniques will be applied, including descriptive analysis, hypothesis testing, and confidence interval estimation.
 
 ### Repository Structure:
